@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tootr Pro DJ - Web Test</title>
+    <style>
+        body {
+            background: #050505;
+            color: white;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-shadow: 0 0 10px #00ccff;
+        }
+
+        .subtitle {
+            color: #00ccff;
+            font-size: 10px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .controls {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pitch-control {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        input[type=range] {
+            width: 100%;
+            accent-color: #00ccff;
+        }
+
+        .categories {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .category {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .category.active {
+            background: #00ccff;
+            color: black;
+        }
+
+        .pads {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .pad {
+            aspect-ratio: 1;
+            background: rgba(255, 0, 204, 0.1);
+            border: 2px solid rgba(255, 0, 204, 0.5);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.1s;
+            user-select: none;
+        }
+
+        .pad:active {
+            transform: scale(0.92);
+            background: rgba(255, 0, 204, 0.6);
+            box-shadow: 0 0 15px rgba(255, 0, 204, 0.8);
+        }
+
+        .pad span {
+            font-size: 10px;
+            font-weight: 900;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .visualizer {
+            height: 30px;
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            margin-top: 30px;
+            opacity: 0.5;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top, #00ccff, #ff00cc);
+            height: 10%;
+            transition: height 0.1s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>TOOTR</h1>
+        <div class="subtitle">WEB PROTOTYPE</div>
+    </header>
+
+    <div class="controls">
+        <div class="pitch-control">
+            <span style="font-size: 10px; color: #00ccff; font-weight: bold;">PITCH: <span id="pitch-val">1.0</span>x</span>
+            <input type="range" id="pitch" min="0.5" max="2.0" step="0.1" value="1.0">
+        </div>
+    </div>
+
+    <div class="categories" id="category-list">
+        <div class="category active" onclick="setCategory('classic')">CLASSIC</div>
+        <div class="category" onclick="setCategory('nature')">NATURE</div>
+        <div class="category" onclick="setCategory('github')">GITHUB</div>
+    </div>
+
+    <div class="pads" id="pad-grid">
+        <!-- Pads will be generated here -->
+    </div>
+
+    <div class="visualizer" id="viz">
+        <!-- Viz bars -->
+    </div>
+</div>
+
+<script>
+    const sounds = {
+        classic: ["wet.mp3", "dry.mp3", "squeak.mp3", "power.mp3", "short.mp3", "long.mp3", "trumpet.mp3", "bean.mp3"],
+        nature: ["gh_f1.mp3", "gh_f2.mp3", "gh_f3.mp3", "gh_f4.mp3", "gh_f5.mp3", "gh_f6.mp3", "gh_reverb.mp3", "gh_sloppy.mp3"],
+        github: ["gh_f1.mp3", "gh_f2.mp3", "gh_f3.mp3", "gh_f4.mp3", "gh_f5.mp3", "gh_f6.mp3", "gh_reverb.mp3", "gh_sloppy.mp3"]
+    };
+
+    const padNames = {
+        classic: ["Ripper", "Gusher", "Squeaker", "Power", "Snap", "Haul", "Horn", "Bean"],
+        nature: ["Quake", "Slide", "Echo", "Gust", "Snap", "Roll", "Splash", "Thunder"],
+        github: ["Push", "Null", "Buffer", "Logic", "Root", "Dump", "Panic", "Init"]
+    };
+
+    let currentCategory = 'classic';
+    const pitchSlider = document.getElementById('pitch');
+    const pitchVal = document.getElementById('pitch-val');
+    const padGrid = document.getElementById('pad-grid');
+    const viz = document.getElementById('viz');
+
+    // Create Visualizer Bars
+    for(let i=0; i<30; i++) {
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+        viz.appendChild(bar);
+    }
+
+    function updateViz() {
+        const bars = document.querySelectorAll('.bar');
+        bars.forEach(bar => {
+            bar.style.height = Math.random() * 100 + '%';
+        });
+        setTimeout(() => {
+            bars.forEach(bar => bar.style.height = '10%');
+        }, 100);
+    }
+
+    function setCategory(cat) {
+        currentCategory = cat;
+        document.querySelectorAll('.category').forEach(el => {
+            el.classList.toggle('active', el.innerText.toLowerCase() === cat);
+        });
+        renderPads();
+    }
+
+    function playSound(index) {
+        const fileName = sounds[currentCategory][index];
+        const audio = new Audio('Tootr/' + fileName);
+        audio.playbackRate = parseFloat(pitchSlider.value);
+        audio.play().catch(e => console.log("Audio play failed: ", e));
+        updateViz();
+    }
+
+    function renderPads() {
+        padGrid.innerHTML = '';
+        padNames[currentCategory].forEach((name, i) => {
+            const pad = document.createElement('div');
+            pad.className = 'pad';
+            pad.innerHTML = `<span>${name}</span>`;
+            pad.onclick = () => playSound(i);
+            padGrid.appendChild(pad);
+        });
+    }
+
+    pitchSlider.oninput = () => {
+        pitchVal.innerText = pitchSlider.value;
+    };
+
+    renderPads();
+</script>
+
+</body>
+</html>

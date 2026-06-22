@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CBE870775857A3802A380B0 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC78699E25E45C99882C8C8 /* PaywallView.swift */; };
+		5C6B5414A69A1BBE1E52DB4A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DA02BB48F1F22DC8AAA4AC /* StoreManager.swift */; };
+		A1B2C3D400010001 /* TootrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400020001 /* TootrApp.swift */; };
+		A1B2C3D400010002 /* DJView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400020002 /* DJView.swift */; };
+		A1B2C3D400010003 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400020003 /* AudioManager.swift */; };
+		A1B2C3D400010004 /* SoundPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400020004 /* SoundPad.swift */; };
+		A1B2C3D400010005 /* ScratchPlatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400020005 /* ScratchPlatter.swift */; };
+		A1B2C3D4000B0001 /* wet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000C0001 /* wet.mp3 */; };
+		A1B2C3D4000B0002 /* dry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000C0002 /* dry.mp3 */; };
+		A1B2C3D4000B0003 /* squeak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000C0003 /* squeak.mp3 */; };
+		A1B2C3D4000B0004 /* power.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000C0004 /* power.mp3 */; };
+		A1B2C3D4000B0005 /* trumpet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000C0005 /* trumpet.mp3 */; };
+		A1B2C3D4000B0006 /* bean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000C0006 /* bean.mp3 */; };
+		A1B2C3D4000B0007 /* short.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000C0007 /* short.mp3 */; };
+		A1B2C3D4000B0008 /* long.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000C0008 /* long.mp3 */; };
+		A1B2C3D4000B0009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000C0009 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		090D6B344E9DBD84E7D987E1 /* Configuration.storekit */ = {isa = PBXFileReference; includeInIndex = 1; path = Configuration.storekit; sourceTree = "<group>"; };
+		17DA02BB48F1F22DC8AAA4AC /* StoreManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		9DC78699E25E45C99882C8C8 /* PaywallView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		A1B2C3D400020001 /* TootrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootrApp.swift; sourceTree = "<group>"; };
+		A1B2C3D400020002 /* DJView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJView.swift; sourceTree = "<group>"; };
+		A1B2C3D400020003 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		A1B2C3D400020004 /* SoundPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPad.swift; sourceTree = "<group>"; };
+		A1B2C3D400020005 /* ScratchPlatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchPlatter.swift; sourceTree = "<group>"; };
+		A1B2C3D400030001 /* Tootr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tootr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D4000C0001 /* wet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wet.mp3; sourceTree = "<group>"; };
+		A1B2C3D4000C0002 /* dry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dry.mp3; sourceTree = "<group>"; };
+		A1B2C3D4000C0003 /* squeak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squeak.mp3; sourceTree = "<group>"; };
+		A1B2C3D4000C0004 /* power.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = power.mp3; sourceTree = "<group>"; };
+		A1B2C3D4000C0005 /* trumpet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = trumpet.mp3; sourceTree = "<group>"; };
+		A1B2C3D4000C0006 /* bean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bean.mp3; sourceTree = "<group>"; };
+		A1B2C3D4000C0007 /* short.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short.mp3; sourceTree = "<group>"; };
+		A1B2C3D4000C0008 /* long.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = long.mp3; sourceTree = "<group>"; };
+		A1B2C3D4000C0009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3D400040001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3D400050001 = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D400020001 /* TootrApp.swift */,
+				A1B2C3D400020002 /* DJView.swift */,
+				A1B2C3D400020003 /* AudioManager.swift */,
+				A1B2C3D400020004 /* SoundPad.swift */,
+				A1B2C3D400020005 /* ScratchPlatter.swift */,
+				A1B2C3D4000C0001 /* wet.mp3 */,
+				A1B2C3D4000C0002 /* dry.mp3 */,
+				A1B2C3D4000C0003 /* squeak.mp3 */,
+				A1B2C3D4000C0004 /* power.mp3 */,
+				A1B2C3D4000C0005 /* trumpet.mp3 */,
+				A1B2C3D4000C0006 /* bean.mp3 */,
+				A1B2C3D4000C0007 /* short.mp3 */,
+				A1B2C3D4000C0008 /* long.mp3 */,
+				A1B2C3D4000C0009 /* Assets.xcassets */,
+				A1B2C3D400050002 /* Products */,
+				AFCD482B867CA3E181AD244E /* Tootr */,
+			);
+			path = Tootr;
+			sourceTree = "<group>";
+		};
+		A1B2C3D400050002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D400030001 /* Tootr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFCD482B867CA3E181AD244E /* Tootr */ = {
+			isa = PBXGroup;
+			children = (
+				17DA02BB48F1F22DC8AAA4AC /* StoreManager.swift */,
+				9DC78699E25E45C99882C8C8 /* PaywallView.swift */,
+				090D6B344E9DBD84E7D987E1 /* Configuration.storekit */,
+			);
+			name = Tootr;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3D400060001 /* Tootr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D400070001 /* Build configuration list for PBXNativeTarget "Tootr" */;
+			buildPhases = (
+				A1B2C3D400080001 /* Sources */,
+				A1B2C3D400040001 /* Frameworks */,
+				A1B2C3D4000D0001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tootr;
+			productName = Tootr;
+			productReference = A1B2C3D400030001 /* Tootr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3D400090001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					A1B2C3D400060001 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3D400070002 /* Build configuration list for PBXProject "Tootr" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B2C3D400050001;
+			productRefGroup = A1B2C3D400050002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D400060001 /* Tootr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3D4000D0001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4000B0001 /* wet.mp3 in Resources */,
+				A1B2C3D4000B0002 /* dry.mp3 in Resources */,
+				A1B2C3D4000B0003 /* squeak.mp3 in Resources */,
+				A1B2C3D4000B0004 /* power.mp3 in Resources */,
+				A1B2C3D4000B0005 /* trumpet.mp3 in Resources */,
+				A1B2C3D4000B0006 /* bean.mp3 in Resources */,
+				A1B2C3D4000B0007 /* short.mp3 in Resources */,
+				A1B2C3D4000B0008 /* long.mp3 in Resources */,
+				A1B2C3D4000B0009 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C3D400080001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D400010001 /* TootrApp.swift in Sources */,
+				A1B2C3D400010002 /* DJView.swift in Sources */,
+				A1B2C3D400010003 /* AudioManager.swift in Sources */,
+				A1B2C3D400010004 /* SoundPad.swift in Sources */,
+				A1B2C3D400010005 /* ScratchPlatter.swift in Sources */,
+				5C6B5414A69A1BBE1E52DB4A /* StoreManager.swift in Sources */,
+				3CBE870775857A3802A380B0 /* PaywallView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C3D4000A0001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NTJ425VK5L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tootr;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Tootr needs microphone access to record your custom DJ mix";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jtechsoftware.Tootr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1B2C3D4000A0002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NTJ425VK5L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Tootr;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Tootr needs microphone access to record your custom DJ mix";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jtechsoftware.Tootr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A1B2C3D4000A0003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1B2C3D4000A0004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C3D400070001 /* Build configuration list for PBXNativeTarget "Tootr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4000A0001 /* Debug */,
+				A1B2C3D4000A0002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D400070002 /* Build configuration list for PBXProject "Tootr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4000A0003 /* Debug */,
+				A1B2C3D4000A0004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1B2C3D400090001 /* Project object */;
+}
